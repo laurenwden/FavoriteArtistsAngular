@@ -5,6 +5,8 @@ import { PromisesComponent } from './promises/promises.component';
 import { CallbacksComponent } from './callbacks/callbacks.component';
 import { MapfunctionComponent } from './mapfunction/mapfunction.component';
 import { JscreatorComponent } from './jscreator/jscreator.component';
+import { ShellComponent } from './shared/shell/shell.component';
+import { ArtistInfoComponent } from './artist-info/artist-info.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,12 @@ const routes: Routes = [
   },
   {
     path:'jscreator', component: JscreatorComponent
+  },
+  {
+    path: 'shared', component: ShellComponent
+  },
+  {
+    path: 'artistinfo', component: ArtistInfoComponent
   }
 ];
 

@@ -8,6 +8,10 @@ import { PromisesComponent } from './promises/promises.component';
 import { CallbacksComponent } from './callbacks/callbacks.component';
 import { MapfunctionComponent } from './mapfunction/mapfunction.component';
 import { JscreatorComponent } from './jscreator/jscreator.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
+import { ArtistInfoComponent } from './artist-info/artist-info.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +20,15 @@ import { JscreatorComponent } from './jscreator/jscreator.component';
     PromisesComponent,
     CallbacksComponent,
     MapfunctionComponent,
-    JscreatorComponent
+    JscreatorComponent,
+    ArtistInfoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

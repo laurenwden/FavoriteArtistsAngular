@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Enter the Artist's Information</h1>
+
+    <form [formGroup]="artistInfoForm" (ngSubmit)="getArtistInfo()">
+        <mat-form-field>
+            <mat-label>Artist Name</mat-label>
+            <input type="text" matInput placeholder="Artist Name" formControlName="artistName">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Total Albums</mat-label>
+            <input type="number" matInput placeholder="Total Albums" formControlName="totalAlbums">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Grammys Won</mat-label>
+            <input type="number" matInput placeholder="Grammys Won" formControlName="grammysWon">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Best Track</mat-label>
+            <input type="text" matInput placeholder="Your Favorite Song From This Artist" formControlName="bestTrack">
+        </mat-form-field>
+
+        <br>
+        <button type="submit" mat-raised-button>Submit</button>
+    </form>
+</div>
+<hr>

@@ -1,0 +1,44 @@
+<mat-sidenav-container>
+    <!--SideNav-->
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog':'navigation'"
+        [mode]="(isHandset$ | async) ? 'over': 'side' " [opened]="false">
+        <mat-toolbar>Menu</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/" (click)="drawer.close()">Home</a>
+            <a mat-list-item routerLink="/artistinfo" (click)="drawer.close()">Breaking Benjamin</a>
+            <a mat-list-item routerLink="/artistinfo" (click)="drawer.close()">Three Days Grace</a>
+            <a mat-list-item routerLink="/artistinfo" (click)="drawer.close()">Adele</a>
+            <a mat-list-item routerLink="/artistinfo" (click)="drawer.close()">Eminem</a>
+            <a mat-list-item routerLink="/artistinfo" (click)="drawer.close()">The Fray</a>
+            <a mat-list-item routerLink="/artistinfo" (click)="drawer.close()">Mat Kearney</a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <!--Top Full Toolbar-->
+        <mat-toolbar>
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+                *ngIf="isHandset$ | async">
+                <mat-icon aria-label="Side nav toggle icon">Menu</mat-icon>
+            </button>
+
+            <span class="logo" routerLink="/">Best Musical Artists Ever</span>
+
+            <span class="fill-space"></span>
+
+            <div *ngIf="!(isHandset$ | async)">
+                <a mat-button routerLink="/">Home</a>
+                <a mat-button routerLink="/artistinfo">Breaking Benjamin</a>
+                <a mat-button routerLink="/artistinfo">Three Days Grace</a>
+                <a mat-button routerLink="/artistinfo">Adele</a>
+                <a mat-button routerLink="/artistinfo">Eminem</a>
+                <a mat-button routerLink="/artistinfo">The Fray</a>
+                <a mat-button routerLink="/artistinfo">Mat Kearney</a>
+
+            </div>
+        </mat-toolbar>
+
+        <!--Angular Transclusion-->
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
